@@ -1,0 +1,28 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterLabel {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.filterInput {
+  padding: 0 10px;
+
+  line-height: 30px;
+  font-size: 13px;
+
+  background-color: rgb(253, 253, 253);
+
+  border-radius: 4px;
+  border: 1px solid rgb(175, 175, 175);
+
+  outline: none;
+}
+
+.filterInput:focus,
+.filterInput:hover {
+  border: 1px solid rgb(119, 116, 116);
+}
