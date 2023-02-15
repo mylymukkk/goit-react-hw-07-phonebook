@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
-
 import { useDispatch } from 'react-redux';
-
 import { HiX } from 'react-icons/hi';
 
-import { deleteContact } from 'redux/contactsSlice';
-
+import { deleteContact } from 'redux/operations';
 import css from './ContactListItem.module.css';
 
 export const ContactListItem = ({ contact }) => {
-  const { name, number, id } = contact;
+  const { name, phone, id } = contact;
 
   const dispatch = useDispatch();
 
@@ -20,7 +17,7 @@ export const ContactListItem = ({ contact }) => {
       <button className={css.deleteBtn} type="button" onClick={handleDelete}>
         <HiX />
       </button>
-      {name}:&nbsp;<span className={css.phoneNumber}>{number}</span>
+      {name}:&nbsp;<span className={css.phoneNumber}>{phone}</span>
     </li>
   );
 };
@@ -28,7 +25,7 @@ export const ContactListItem = ({ contact }) => {
 ContactListItem.propTypes = {
   contact: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }),
 };
